@@ -71,12 +71,11 @@ class RunnerTest(unittest.TestCase):
             runner_test = r_.Runner('somebody', -7)
             runner_test.run()
             distance_test = runner_test.distance
-            # Собственно, тест
-            self.assertEqual(distance_test, 14)
             logging.info(f'"test_run" выполнен успешно')
         except:
             logging.warning(f'Неверная скорость для Runner', exc_info=True)
             distance_test = None
+        finally:
             # Собственно, тест
             self.assertEqual(distance_test, 14)
 
@@ -85,11 +84,10 @@ class RunnerTest(unittest.TestCase):
             runner_test = r_.Runner(282, 7)
             runner_test.walk()
             distance_test = runner_test.distance
-            # Собственно, тест
-            self.assertEqual(distance_test, 7)
             logging.info(f'"test_walk" выполнен успешно')
         except:
             logging.warning(f'Неверный тип данных для объекта Runner', exc_info=True)
             distance_test = None
+        finally:
             # Собственно, тест
             self.assertEqual(distance_test, 7)
